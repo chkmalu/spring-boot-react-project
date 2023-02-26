@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    tool {
+    tools {
         maven 'maven'
     }
 
@@ -8,9 +8,6 @@ pipeline {
         stage('BUILD & TEST APP') {
             steps {
                 echo 'BUILDING & TESTING APP'
-            }
-            steps {
-                echo 'TESTING APP'
             }
         }
         stage('BUILD & PUSH IMAGE') {
