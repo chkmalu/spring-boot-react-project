@@ -1,0 +1,12 @@
+/home/malu/Desktop/devops/spring-boot-react-example/src/main/java/com/contoso/payroll/Employee.java
+/home/malu/Desktop/devops/spring-boot-react-example/src/main/java/com/contoso/payroll/ManagerRepository.java
+/home/malu/Desktop/devops/spring-boot-react-example/src/main/java/com/contoso/payroll/SpringDataJpaUserDetailsService.java
+/home/malu/Desktop/devops/spring-boot-react-example/src/main/java/com/contoso/payroll/DatabaseLoader.java
+/home/malu/Desktop/devops/spring-boot-react-example/src/main/java/com/contoso/payroll/EventHandler.java
+/home/malu/Desktop/devops/spring-boot-react-example/src/main/java/com/contoso/payroll/SpringDataRestEventHandler.java
+/home/malu/Desktop/devops/spring-boot-react-example/src/main/java/com/contoso/payroll/ReactAndSpringDataRestApplication.java
+/home/malu/Desktop/devops/spring-boot-react-example/src/main/java/com/contoso/payroll/HomeController.java
+/home/malu/Desktop/devops/spring-boot-react-example/src/main/java/com/contoso/payroll/WebSocketConfiguration.java
+/home/malu/Desktop/devops/spring-boot-react-example/src/main/java/com/contoso/payroll/SecurityConfiguration.java
+/home/malu/Desktop/devops/spring-boot-react-example/src/main/java/com/contoso/payroll/Manager.java
+/home/malu/Desktop/devops/spring-boot-react-example/src/main/java/com/contoso/payroll/EmployeeRepository.java
