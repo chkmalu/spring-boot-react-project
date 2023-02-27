@@ -20,7 +20,7 @@ pipeline {
         stage('BUILD & PUSH IMAGE') {
             steps {
                 echo 'BUILDING & PUSHING IMAGE'
-                withCredentials([usernamePassword(credentialsId: 'DockerAccess', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                withCredentials([usernamePassword(credentialsId: 'AWS_ECR_ACCESS', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     script {
                         sh "echo ${PASSWORD} | docker login -u ${USERNAME} --password-stdin ${IMAGE_REPO}"
                         sh "docker build -t ${IMAGE_NAME}:${IMAGE_TAG} ."
