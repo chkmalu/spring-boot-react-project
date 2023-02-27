@@ -50,7 +50,7 @@ pipeline {
                     sh "kubectl create secret docker-registry regcred --docker-server=${IMAGE_REPO} \
                         --docker-username=${AWS_ECR_USR} \
                         --docker-password=${AWS_ECR_PSW}"
-                    sh 'kubectl apply -f seamlessshr.yaml'
+                    // sh 'kubectl apply -f seamlessshr.yaml'
                 }
             }
         }
