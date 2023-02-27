@@ -41,7 +41,7 @@ pipeline {
         }
         stage('DEPLOY APP') {
             environment {
-                AWS_ECR = credentialsId('AWS_ECR_ACCESS')
+                AWS_ECR = credentials('AWS_ECR_ACCESS')
             }
             steps {
                 echo 'DEPLOYING APPLICATION'
