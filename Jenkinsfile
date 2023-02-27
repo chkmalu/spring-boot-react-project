@@ -40,11 +40,17 @@ pipeline {
             }
         }
         stage('DEPLOY APP') {
+            environment {
+                AWS_ECR = credentialsId('AWS_ECR_ACCESS')
+            }
             steps {
                 echo 'DEPLOYING APPLICATION'
-                script {
+                dir('kubernetes') {
                     sh 'aws eks update-kubeconfig --region us-east-1 --name dev_cluster'
-                    // sh 'kubectl version --client --output=yaml'
+                    sh "kubectl create secret docker-registry regcred --docker-server=${IMAGE_REPO} \
+                        --docker-username=${AWS_ECR_USR} \
+                        --docker-password=${AWS_ECR_PSW}"
+                    sh 'kubectl apply -f seamlessshr.yaml'
                 }
             }
         }

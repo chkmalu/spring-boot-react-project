@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: seamlesshr-dev
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: seamlesshr-dev
+  name: seamlesshr-deployment
+  labels:
+    app: seamlesshr
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: seamlesshr
+  template:
+    metadata:
+      labels:
+        app: seamlesshr
+    spec:
+      containers:
+      - name: seamlesshr
+        image: 081241791096.dkr.ecr.us-east-1.amazonaws.com/seamlesshr:1.0
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: seamlesshr-dev
+  name: seamlesshr-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: seamlesshr
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
