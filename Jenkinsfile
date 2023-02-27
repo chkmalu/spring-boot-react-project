@@ -47,9 +47,8 @@ pipeline {
                 when {
                 allOf {
                 }
-                currentBuild.PreviousBuild().result='SUCCESS'
+                currentBuild.getPreviousBuild().result
                 }
-                echo currentBuild.PreviousBuild().result
                 echo 'DEPLOYING APPLICATION'
                 
                 // dir('kubernetes') {
