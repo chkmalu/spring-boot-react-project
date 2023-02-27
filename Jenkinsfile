@@ -48,7 +48,10 @@ pipeline {
                 allOf {
                 }
                 beforeOptions true
+                beforeInput true
+                beforeAgent true
                 }
+
                 echo 'DEPLOYING APPLICATION'
                 
                 // dir('kubernetes') {
