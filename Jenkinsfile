@@ -43,7 +43,8 @@ pipeline {
             steps {
                 echo 'DEPLOYING APPLICATION'
                 script {
-                    sh 'kubectl version --client --output=yaml'
+                    sh 'aws eks update-kubeconfig --region us-east-1 --name dev_cluster'
+                    // sh 'kubectl version --client --output=yaml'
                 }
             }
         }
