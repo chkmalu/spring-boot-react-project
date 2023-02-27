@@ -46,7 +46,7 @@ pipeline {
             steps {
                 echo 'DEPLOYING APPLICATION'
                 dir('kubernetes') {
-                    sh 'aws eks update-kubeconfig --region us-east-1 --name dev_cluster'
+                    sh 'aws eks update-kubeconfig --region us-east-1 --name dev-cluster'
                     sh "kubectl create secret docker-registry regcred --docker-server=${IMAGE_REPO} \
                         --docker-username=${AWS_ECR_USR} \
                         --docker-password=${AWS_ECR_PSW}"
