@@ -47,7 +47,7 @@ pipeline {
                 when {
                 allOf {
                 }
-                currentBuild.getPreviousBuild().result
+                beforeOptions true
                 }
                 echo 'DEPLOYING APPLICATION'
                 
