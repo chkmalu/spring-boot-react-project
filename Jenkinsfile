@@ -33,15 +33,18 @@ pipeline {
         stage('PROVISION INFRASTRUCTURE') {
             steps {
                 echo 'PROVISIONING INFRASTRUCTURE'
-                dir('terraform') {
-                    sh 'terraform init'
-                    sh 'terraform plan'
-                }
+                // dir('terraform') {
+                //     sh 'terraform init'
+                //     sh 'terraform plan'
+                // }
             }
         }
         stage('DEPLOY APP') {
             steps {
                 echo 'DEPLOYING APPLICATION'
+                script {
+                    sh 'kubectl version --client --output=yaml'
+                }
             }
         }
     }
