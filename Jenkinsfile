@@ -12,12 +12,18 @@ pipeline {
 
     stages {
         stage('TEST & BUILD APP') {
+             when {
+                branch 'main'
+            }
             steps {
                 echo 'TESTING & BUILDING APP'
                 // sh 'mvn clean package'
             }
         }
         stage('BUILD & PUSH IMAGE') {
+             when {
+                branch 'main'
+            }
             steps {
                 echo 'BUILDING & PUSHING IMAGE'
                 // withCredentials([usernamePassword(credentialsId: 'AWS_ECR_ACCESS', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
