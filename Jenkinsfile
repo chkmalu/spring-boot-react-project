@@ -43,10 +43,10 @@ pipeline {
             environment {
                 AWS_ECR = credentials('AWS_ECR_ACCESS')
             }
-            steps {
-                when {
+            when {
                 environment name: 'currentBuild.getPreviousBuild().result', value: 'SUCCESS'
                 }
+            steps {
                 echo 'DEPLOYING APPLICATION'
                 
                 // dir('kubernetes') {
