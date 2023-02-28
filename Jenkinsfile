@@ -31,6 +31,9 @@ pipeline {
             }
         }
         stage('PROVISION INFRASTRUCTURE') {
+            when {
+                branch 'infra-setup'
+            }
             steps {
                 echo 'PROVISIONING INFRASTRUCTURE'
                 // dir('terraform') {
@@ -44,7 +47,6 @@ pipeline {
                 AWS_ECR = credentials('AWS_ECR_ACCESS')
             }
             steps {
-                echo currentBuild.previousBuild.result
                 echo 'DEPLOYING APPLICATION'
                 
                 // dir('kubernetes') {
