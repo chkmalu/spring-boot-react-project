@@ -37,7 +37,7 @@ pipeline {
                 dir('terraform') {
                     sh 'terraform init'
                     sh 'terraform plan'
-                    STATUS = true
+                    script { STATUS = true }
                 }
             }
         }
