@@ -49,6 +49,9 @@ pipeline {
             }
         }
         stage('DEPLOY APP') {
+             when {
+                branch 'main'
+            }
             environment {
                 AWS_ECR = credentials('AWS_ECR_ACCESS')
             }
