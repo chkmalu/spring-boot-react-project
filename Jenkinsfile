@@ -31,6 +31,9 @@ pipeline {
             }
         }
         stage('PROVISION INFRASTRUCTURE') {
+            when {
+                branch 'infra-setup'
+            }
             steps {
                 echo 'PROVISIONING INFRASTRUCTURE'
                 // dir('terraform') {
