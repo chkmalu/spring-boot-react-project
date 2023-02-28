@@ -47,7 +47,6 @@ pipeline {
                 AWS_ECR = credentials('AWS_ECR_ACCESS')
             }
             steps {
-                echo currentBuild.previousBuild.result
                 echo 'DEPLOYING APPLICATION'
                 
                 // dir('kubernetes') {
