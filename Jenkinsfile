@@ -45,11 +45,7 @@ pipeline {
             }
             steps {
                 when {
-                allOf {
-                }
-                beforeOptions true
-                beforeInput true
-                beforeAgent true
+                    currentBuild.getPreviousBuild().result
                 }
 
                 echo 'DEPLOYING APPLICATION'
