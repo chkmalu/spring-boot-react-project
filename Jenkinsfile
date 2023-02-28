@@ -36,7 +36,7 @@ pipeline {
                 echo 'PROVISIONING INFRASTRUCTURE'
                 dir('terraform') {
                     sh 'terraform init'
-                    sh 'terraform plan'
+                    sh 'terraform pla'
                     script { STATUS = true }
                 }
             }
