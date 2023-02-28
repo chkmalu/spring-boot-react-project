@@ -44,7 +44,7 @@ pipeline {
                 AWS_ECR = credentials('AWS_ECR_ACCESS')
             }
             when {
-                environment name: 'currentBuild.getPreviousBuild().result', value: 'SUCCESS'
+                currentBuild.getPreviousBuild().result = 'SUCCESS'
                 }
             steps {
                 echo 'DEPLOYING APPLICATION'
