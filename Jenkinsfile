@@ -36,7 +36,7 @@ pipeline {
                 echo 'PROVISIONING INFRASTRUCTURE'
                 dir('terraform') {
                     sh 'terraform init'
-                    sh 'terraform pla'
+                    sh 'terraform apply -auto-approve'
                     script { STATUS = true }
                 }
             }
