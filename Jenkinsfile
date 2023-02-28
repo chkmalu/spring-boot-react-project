@@ -45,7 +45,7 @@ pipeline {
             }
             when {
                 anyOf {
-                    currentBuild.getPreviousBuild().result = 'SUCCESS'
+                    currentBuild.getPreviousBuild().result 'SUCCESS'
                 }
             }
             steps {
