@@ -22,6 +22,3 @@ phases:
   artifacts:
     files:
       - $IMAGE_REPO_NAME
-    name: $(date +%Y-%m-%d)
-    discard-paths: yes
-    base-directory: location
